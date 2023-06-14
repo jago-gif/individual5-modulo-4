@@ -7,6 +7,8 @@ async function fetchMealCategories() {
     const data = await response.json();
 
     const categories = strCategory(data.categories);
+    console.log("Las categorias son: ");
+        console.log(categories);
 
     categories.forEach((category) => {
       const optionElement = document.createElement("option");
@@ -30,6 +32,7 @@ async function fetchMealsByCategory() {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
+      console.log("Los platillos de la categoria seleccionada son ");
       console.log(data);
 
       // Limpiar el contenedor de comidas antes de agregar las nuevas tarjetas
